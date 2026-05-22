@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SM COFFE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
 
+    <div class="app-container">
+        
+        <div class="app-header">
+            <div class="profile-box">
+                <img src="img.jpg" alt="Logo" class="mini-logo">
+            </div>
+            <button class="cart-btn" aria-label="Cart">
+                <i class="fas fa-shopping-bag"></i>
+            </button>
+        </div>
+
+        <h1 class="main-title">Find the best <br><span>SM COFFE</span> for you</h1>
+
+        <div class="search-container">
+            <input type="text" placeholder="Find Your Coffee, Pizza..." id="searchInput">
+            <button class="search-btn" onclick="searchFunction()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <div class="delivery-tabs">
+            <button class="tab-btn active" onclick="switchTab(this)">Delivery</button>
+            <button class="tab-btn" onclick="switchTab(this)">Anigaa Soo Donanayo</button>
+            <button class="tab-btn" onclick="switchTab(this)">Dine-In</button>
+        </div>
+
+        <div class="section-header">
+            <h2>Qaybta Coffee-ga</h2>
+            <a href="#" class="see-all">See All</a>
+        </div>
+
+        <div class="grid-container">
+            <div class="product-card">
+                <div class="image-holder">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=500" alt="Espresso">
+                    <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                </div>
+                <h3>Espresso Single</h3>
+                <p class="subtitle">With Premium Beans</p>
+                <div class="card-footer">
+                    <span class="price">$1.50</span>
+                    <button class="add-to-cart" onclick="orderItem('Espresso Single')">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-holder">
+                    <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fc9f?q=80&w=500" alt="Spanish Latte">
+                    <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                </div>
+                <h3>Spanish Latte</h3>
+                <p class="subtitle">With Sweet Milk</p>
+                <div class="card-footer">
+                    <span class="price">$2.50</span>
+                    <button class="add-to-cart" onclick="orderItem('Spanish Latte')">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h2>Qaybta Pizza-da</h2>
+            <a href="#" class="see-all">See All</a>
+        </div>
+
+        <div class="grid-container">
+            <div class="product-card">
+                <div class="image-holder">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=500" alt="Pizza Pepperoni">
+                    <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                </div>
+                <h3>Pizza Pepperoni</h3>
+                <p class="subtitle">Large Mozzarella</p>
+                <div class="card-footer">
+                    <span class="price">$8.00</span>
+                    <button class="add-to-cart" onclick="orderItem('Pizza Pepperoni')">+</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function orderItem(itemName) {
+            alert("Waxaad dalbatay: " + itemName);
+        }
+
+        function switchTab(element) {
+            let tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        function searchFunction() {
+            let query = document.getElementById('searchInput').value;
+            if(query) {
+                alert("Waxaad baaraysaa: " + query);
+            } else {
+                alert("Fadlan qor waxaad u baahan tahay!");
+            }
+        }
+    </script>
+</body>
+</html>
